@@ -1,0 +1,10 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        int n(size(nums));
+        vector<int> prefix(n);
+        prefix[0] = nums[0];
+        for(int i = 1; i < n; i++) prefix[i] = nums[i] + prefix[i-1];
+        return prefix;
+    }
+};
