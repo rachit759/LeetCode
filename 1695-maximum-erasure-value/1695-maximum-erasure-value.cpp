@@ -7,14 +7,14 @@ public:
         
         while(j < n) {
             
-            sum += nums[j];
-            mp[nums[j]]++;
-            
+           mp[nums[j]]++;
             while(mp[nums[j]] > 1) {
                 mp[nums[i]]--;
                 sum -= nums[i];
                 i++;
             }
+            sum += nums[j];
+            
             
             res = max(res,sum);
             j++;
