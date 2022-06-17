@@ -12,7 +12,8 @@ class Solution
     {
         vector<int> dist(V,INT_MAX);
         
-        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+        //priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+        queue<pair<int,int>> pq;
         dist[S] = 0;
         pq.push({0,S});
         
@@ -24,8 +25,8 @@ class Solution
         
 // cout<<endl;
         while(!pq.empty()) {
-            int prev = pq.top().second;                        //vec[0] node
-            int distprev = pq.top().first;                     // vec[1] dist
+            int prev = pq.front().second;                        //vec[0] node
+            int distprev = pq.front().first;                     // vec[1] dist
             pq.pop();
             for(auto vec : adj[prev]) {
                 int next = vec[0];
