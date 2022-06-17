@@ -8,38 +8,36 @@ class Solution
 	public:
 	//Function to find the shortest distance of all the vertices
     //from the source vertex S.
-    
-  
-    
-    
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
+        vector<int> dist(V,INT_MAX);
         
-        vector<int> dis(V,INT_MAX);
-        dis[S] = 0;
         priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
-        
+        dist[S] = 0;
         pq.push({0,S});
         
+//         for(auto vec2d : adj[0]) {
+                
+//                     cout<<vec2d[0]<<" "<<vec2d[1]<<endl;
+//                 }
+            
+        
+// cout<<endl;
         while(!pq.empty()) {
-            int dist = pq.top().first;
-            int prev = pq.top().second;
+            int prev = pq.top().second;                        //vec[0] node
+            int distprev = pq.top().first;                     // vec[1] dist
             pq.pop();
             for(auto vec : adj[prev]) {
                 int next = vec[0];
                 int nextdist = vec[1];
-                if(dist + nextdist < dis[next]) {
-                    dis[next] = dist + nextdist;
-                    pq.push({dis[next],next});
+                if(distprev + nextdist < dist[next]) {
+                    dist[next] = distprev + nextdist;
+                    pq.push({dist[next],next});
                 }
             }
-            
-            
         }
         
-        
-        
-        return dis;
+        return dist;
         
     }
 };
