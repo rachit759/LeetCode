@@ -46,14 +46,14 @@ public:
         {
             if(height[left] <= height[right])
             {
-                if(height[left]>=leftmax) leftmax=height[left];
+                if(height[left]>leftmax) leftmax=height[left];
                 else water+= leftmax-height[left];
                 
                 left++;
             }
             else
             {
-                if(height[right]>=rightmax) rightmax=height[right];
+                if(height[right]>rightmax) rightmax=height[right];
                 else water+= rightmax - height[right];
                 
                 right--;
