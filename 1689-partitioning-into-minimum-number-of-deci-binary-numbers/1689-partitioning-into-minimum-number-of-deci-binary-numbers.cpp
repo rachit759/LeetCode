@@ -1,7 +1,6 @@
 class Solution {
 public:
     int minPartitions(string n) {
-        vector<char> v(begin(n),end(n));
-        return *max_element( begin(v), end(v)) - '0';
+        return *max_element(begin(n), end(n)) - '0';
     }
 };
