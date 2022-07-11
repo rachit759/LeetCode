@@ -10,16 +10,15 @@ public:
             diff[abs(nums1[i]-nums2[i])]++;
         }
         
-        for(int i = 100000; i >= 0; i--) {
-             freq = diff[i]; 
+        for(int i = 100000; i >= 1; i--) {
+            freq = diff[i]; 
             if(freq <= k) {
-                if(i <= 1) return 0;
+                if(i == 1) return 0;
                 diff[i] = 0;
                 diff[i-1] += freq;
                 k -= freq;
             }
             else {
-                if(i == 0) return 0;
                 diff[i] -= k;
                 diff[i-1] += k;
                 break;
