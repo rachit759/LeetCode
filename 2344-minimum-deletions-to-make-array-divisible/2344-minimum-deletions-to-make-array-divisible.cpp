@@ -23,7 +23,7 @@ public:
         sort(begin(nums),end(nums));
         
         
-        for(int i = 0; i < size(nums) and nums[i] <= g; i++) {
+        for(int i = 0; i < size(nums); i++) {
             if(g % nums[i] == 0) return i;
         }
         
