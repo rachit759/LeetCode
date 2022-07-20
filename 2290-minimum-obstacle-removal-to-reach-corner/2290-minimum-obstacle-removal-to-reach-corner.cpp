@@ -16,10 +16,9 @@ public:
         priority_queue<pair<int,pi>, vector<pair<int,pi>>, greater<pair<int,pi>>> pq;
         vector<vector<int>> dist(m, vector<int>(n,INT_MAX));
         dist[0][0] = 0;
-        pq.push({grid[0][0],{0,0}});
+        pq.push({0,{0,0}});
         grid[0][0] = -1;
-        int ans = 0;
-        
+    
         while(!pq.empty()) {
             
             auto cell = pq.top();
