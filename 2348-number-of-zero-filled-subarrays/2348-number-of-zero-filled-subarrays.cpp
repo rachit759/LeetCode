@@ -8,9 +8,9 @@ public:
         
         while(j < n) {
             
-            if(nums[j] != 0) i++, j++;
+            if(nums[j] != 0) j++;
             
-            else if(nums[j] == 0) {
+            else {
                 i = j;
                 while(j < n and nums[j] == 0) {
                     int len = j-i+1;
