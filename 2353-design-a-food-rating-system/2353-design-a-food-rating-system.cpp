@@ -10,14 +10,14 @@ public :
 class FoodRatings {
 public:
     
-    unordered_map<string,set<pair<int,string>,cmp>>  cus_rate;      // cuisine, set of food
+    unordered_map<string,set<pair<int,string>>>  cus_rate;      // cuisine, set of food
     unordered_map<string,string>  food_cus;     // food, cusine
     unordered_map<string,int>  food_rate;     // food rating
     
     FoodRatings(vector<string>& foods, vector<string>& cuisines, vector<int>& ratings) {
         int n(size(foods));
         for(int i = 0; i < n; i++) {
-            cus_rate[cuisines[i]].insert({ratings[i],foods[i]});
+            cus_rate[cuisines[i]].insert({-ratings[i],foods[i]});
             food_cus[foods[i]] = cuisines[i];
             food_rate[foods[i]] = ratings[i];
         }
@@ -25,8 +25,8 @@ public:
     
     void changeRating(string food, int newRating) {
         
-        cus_rate[food_cus[food]].erase({food_rate[food],food});
-        cus_rate[food_cus[food]].insert({newRating,food});
+        cus_rate[food_cus[food]].erase({-food_rate[food],food});
+        cus_rate[food_cus[food]].insert({-newRating,food});
         food_rate[food] = newRating;
     }
     
