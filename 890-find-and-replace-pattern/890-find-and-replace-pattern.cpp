@@ -3,13 +3,13 @@ public:
     vector<string> findAndReplacePattern(vector<string>& words, string pat) {
         
         
-        unordered_map<char,char>  mp;
-        unordered_set<char>  s;
+        
         vector<string> ans;
         int n(size(pat));
         
         for(auto word : words) {
-            //mp.clear();
+            unordered_map<char,char>  mp;
+            unordered_set<char>  s;
             int flag = 1;
             for(int i = 0; i < n; i++) {
                 if(mp.find(pat[i]) == mp.end()) {
@@ -29,8 +29,6 @@ public:
                     } 
                 }
             }
-            mp.clear();
-            s.clear();
             if(flag == 1) ans.push_back(word);
            
         }
