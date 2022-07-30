@@ -11,17 +11,18 @@ public:
         
         vector<int> maxcount(26);
         vector<string> ans;
-        int i;
+        
         for(auto &word : words2) {
-            auto vec = helper(word);
-            for(i = 0; i < 26; i++) {
+            vector<int> vec = helper(word);
+            for(int i = 0; i < 26; i++) {
                 maxcount[i] = max(maxcount[i],vec[i]);
             }
         }
         
         for(auto &word : words1) {
-            auto vec = helper(word);
-            for(i = 0; i < 26; i++) {
+            vector<int> vec = helper(word);
+            int i = 0;
+            for(; i < 26; i++) {
                 if(maxcount[i] > vec[i]) break;
             }
             if(i == 26) ans.push_back(word);
