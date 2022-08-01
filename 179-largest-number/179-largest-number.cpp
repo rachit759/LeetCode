@@ -50,16 +50,16 @@ public:
         
         for(auto it = mp.rbegin(); it!=mp.rend(); it++) {
             
-           if(it->first == 0) {
+//            if(it->first == 0) {
                
-               if(flag == 1) ans+="0";
-               else {
-                    auto s = it->second;
-                   ans += string(s.size(),'0');
-               }
+//                if(flag == 1) ans+="0";
+//                else {
+//                     auto s = it->second;
+//                    ans += string(s.size(),'0');
+//                }
                
-               continue;
-           } 
+//                continue;
+//            } 
             
            auto s = it->second;
             for(auto ele : s) {
@@ -71,7 +71,8 @@ public:
         }
         
         
-        
+        if(ans[0]=='0')
+            ans="0";
         
         return ans;
         
