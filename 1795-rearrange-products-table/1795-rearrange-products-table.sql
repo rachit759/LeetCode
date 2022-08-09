@@ -8,4 +8,4 @@ select product_id , 'store2' as store , store2 as price from products where stor
 union 
 select product_id , 'store3' as store , store3 as price from products where store3 is not null
 
-order by 1;
+order by product_id;
