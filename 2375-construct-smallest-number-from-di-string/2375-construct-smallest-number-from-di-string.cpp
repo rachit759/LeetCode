@@ -14,19 +14,13 @@ public:
         string vec;
         
         helper(nums,vis,vec,pattern);
-         vector<string> ss;
-       
-        //  for(auto it : ans) {
-        //     cout<<it<<" ";
-        // }
-       
-        int maxi = INT_MAX;
+         
         
-        for(auto it : ans) {
-            maxi = min(stoi(it),maxi);
-        }
+        return ans.front();
+       
         
-        return to_string(maxi);
+       
+        
     }
     
     void helper(vector<int> &nums, vector<int> &vis, string vec, string pat) {
