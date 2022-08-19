@@ -1,3 +1,6 @@
+
+// watch yt video for further explanation
+
 class Solution {
 public:
     bool isPossible(vector<int>& nums) {
