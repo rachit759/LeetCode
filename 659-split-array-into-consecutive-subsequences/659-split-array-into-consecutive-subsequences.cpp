@@ -19,7 +19,7 @@ public:
                 hp[ele+1]++;
                 mp[ele]--;
             }
-            else if(mp[ele] > 0 and mp[ele+1] > 0 and mp[ele+2] > 0) {
+            else if(mp[ele+1] > 0 and mp[ele+2] > 0) {
                 mp[ele]--;
                 mp[ele+1]--;
                 mp[ele+2]--;
