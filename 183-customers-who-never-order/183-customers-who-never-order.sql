@@ -2,8 +2,7 @@
 
 
 
-select name as customers
+select name as Customers
 from customers
-LEFT JOIN orders
-on customers.id = orders.customerId
-where customerId is null
+where id not in (
+select customerId from orders)
