@@ -1,21 +1,25 @@
 class Solution {
 public:
-    vector<int> Helper(long n){
-        vector<int>num(10);
-        
-        while(n){
-            num[n%10]++;
-            n=n/10;
+    
+    vector<int> freq(int n) {
+        vector<int> mp(10,0);
+        while(n) {
+            mp[n%10]++;
+            n /= 10;
         }
-        return num;
+        return mp;
     }
+    
+    
+    
     bool reorderedPowerOf2(int n) {
-        vector<int>v=Helper(n);
-        for(int i=0;i<31;i++){
-            if(v==Helper(1<<i)){
-                return true;
-            }
+        
+        vector<int> check = freq(n);
+        
+        for(int i =0 ; i <= 29; i++) {
+            if(check == freq(1<<i)) return true;
         }
+        
         return false;
     }
 };
