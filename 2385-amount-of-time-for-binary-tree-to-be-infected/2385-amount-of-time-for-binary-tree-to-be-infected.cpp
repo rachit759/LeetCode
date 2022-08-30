@@ -42,7 +42,7 @@ public:
                 int node = q.front();
                 q.pop();
                 for(auto it : adj[node]) {
-                    if(!vis[it]) {
+                    if(!vis.count(it)) {
                         q.push(it);
                         vis[it] = 1;
                     }
