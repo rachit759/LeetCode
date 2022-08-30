@@ -11,8 +11,8 @@
  */
 class Solution {
 public:
-    
-    void maker(TreeNode* root, vector<int> adj[]) {
+    unordered_map<int,vector<int>>  adj;
+    void maker(TreeNode* root) {
         
         if(root == nullptr) return;
         if(root->left != nullptr) {
@@ -23,27 +23,18 @@ public:
             adj[root->val].push_back(root->right->val);
             adj[root->right->val].push_back(root->val);
         }
-        maker(root->left,adj);
-        maker(root->right,adj);  
+        maker(root->left);
+        maker(root->right);  
     }
     
     int amountOfTime(TreeNode* root, int start) {
         
-        vector<int> adj[100001];
-        maker(root,adj);
-        
-        // for(int i = 1; i < 11; i++) {
-        //     cout<<i<<": ";
-        //     for(auto it : adj[i]) cout<<it<<" ";
-        //     cout<<endl;
-        // }
-        
+        maker(root);
         int time = 0;
         queue<int> q;
         q.push(start);
-        vector<int> vis(100001,0);
+        unordered_map<int,int>  vis;
         vis[start] = 1;
-        
         while(q.size()) {
             int sz = q.size();
             time += 1;
