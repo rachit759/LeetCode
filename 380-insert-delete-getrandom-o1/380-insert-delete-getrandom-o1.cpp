@@ -24,6 +24,7 @@ public:
     }
     
     int getRandom() {
+        //srand(1);
         return v[rand()%v.size()];
     }
 };
