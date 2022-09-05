@@ -26,8 +26,8 @@ public:
         vector<int> row;
         queue<Node*> q;
         q.push(root);
-        while(!q.empty()) {
-            int sz = q.size();
+        while(q.size()) {
+            int sz(size(q));
             row.clear();
             for(int i = 0; i < sz; i++) {
                 Node* node = q.front();
