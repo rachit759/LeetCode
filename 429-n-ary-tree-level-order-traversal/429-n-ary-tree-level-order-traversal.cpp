@@ -23,12 +23,11 @@ public:
     vector<vector<int>> levelOrder(Node* root) {
         if(!root) return {};
         vector<vector<int>> ans;
-        vector<int> row;
         queue<Node*> q;
         q.push(root);
         while(q.size()) {
-            int sz(size(q));
-            row.clear();
+            int sz = q.size();
+            vector<int> row;
             for(int i = 0; i < sz; i++) {
                 Node* node = q.front();
                 q.pop();
