@@ -5,8 +5,9 @@
 
 
 class Solution {
-public:
     vector<int> original;
+public:
+   
     Solution(vector<int>& nums) {
         original = nums;
     }
@@ -22,7 +23,6 @@ public:
             int j = rand()%(i+1);
             swap(temp[i],temp[j]);
         }
-        
         return temp;
     }
 };
