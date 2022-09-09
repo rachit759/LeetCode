@@ -18,18 +18,14 @@ public:
         while(pq.size()) {
             auto node = pq.top();
             pq.pop();
-            
             int cost = node[0];
             int curr = node[1];
             int stop = node[2];
-            
             if(curr == dst) return cost;
             if(stop > k) continue;
             if(stops[curr] != INT_MAX and stops[curr] <= stop) continue;
             stops[curr] = stop;
-            for(auto vec : adj[curr]) {
-                pq.push({cost+vec.second,vec.first,stop+1});
-            }
+            for(auto vec : adj[curr]) pq.push({cost+vec.second,vec.first,stop+1});
         }
         
         return -1;
