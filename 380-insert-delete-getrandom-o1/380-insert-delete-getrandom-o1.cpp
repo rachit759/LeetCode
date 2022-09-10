@@ -15,16 +15,17 @@ public:
     
     bool remove(int val) {
         if(!mp.count(val)) return false;
-        int last = v.back();
-        v[mp[val]] = last;
-        v.pop_back();
-        mp[last] = mp[val];
-        mp.erase(val);
+        int last = v.back(); // getting last value
+        int index = mp[val];
+        
+        v[index] = last;   // updating vector of deleting with last value
+        v.pop_back();  // removing from vector
+        mp[last] = index;     // updating in the map
+        mp.erase(val);   // removing from map
         return true;
     }
     
     int getRandom() {
-        //srand(1);
         return v[rand()%v.size()];
     }
 };
