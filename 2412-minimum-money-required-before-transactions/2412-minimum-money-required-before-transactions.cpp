@@ -13,6 +13,6 @@ public:
             else maxa = max(maxa,t[i][0]);
         }
         
-        return loss + maxa;
+        return loss + (long long)maxa;
     }
 };
