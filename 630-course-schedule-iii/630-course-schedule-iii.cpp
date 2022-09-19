@@ -5,20 +5,20 @@ public:
         sort(begin(c),end(c),[](vector<int> &a , vector<int> &b){ return a[1] < b[1];});
         
         
-        int time  =0;
+        int time  = 0;
         //int count =0;
         
         int n = c.size();
         priority_queue<int> pq;
         
         for(int i = 0; i < n; i++) {
-            if(time+c[i][0] <= c[i][1]) {
+            if(time+c[i][0] <= c[i][1]) {      // can take the course
                 time += c[i][0];
                 pq.push(c[i][0]);
                 //count+=1;
             }
-            else if(pq.size() and pq.top() > c[i][0]) {
-                time -= pq.top();
+            else if(pq.size() and pq.top() > c[i][0]) {      //check if their exist a course with long duration than                                                                       //currennt course and replace the time with that
+                time -= pq.top();  
                 time += c[i][0];
                 pq.pop();
                 pq.push(c[i][0]);
