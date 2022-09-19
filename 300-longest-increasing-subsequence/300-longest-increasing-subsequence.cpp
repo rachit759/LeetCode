@@ -27,10 +27,7 @@ public:
                 vec[low] = nums[i];
                 
             }
-        }
-    
-        
-        
+        } 
         return vec.size();
     }
 };
