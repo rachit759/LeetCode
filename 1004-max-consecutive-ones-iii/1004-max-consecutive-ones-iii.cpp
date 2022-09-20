@@ -6,10 +6,10 @@ class Solution {
 public:
     int longestOnes(vector<int>& nums, int k) {
         
-        int i, j, zerocount, ans = INT_MIN;
+        int i, j, zerocount, ans = INT_MIN, n = nums.size();
         i = j = zerocount = 0;
         
-        while(j < size(nums)) {
+        while(j < n) {
             if(nums[j] == 0) zerocount += 1;
             while(zerocount > k) {
                 if(nums[i] == 0) zerocount -= 1;
