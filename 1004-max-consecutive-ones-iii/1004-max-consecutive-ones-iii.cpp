@@ -10,13 +10,13 @@ public:
         i = j = zerocount = 0;
         
         while(j < n) {
-            if(nums[j] == 0) zerocount += 1;
+            if(nums[j] == 0) ++zerocount;
             while(zerocount > k) {
-                if(nums[i] == 0) zerocount -= 1;
+                if(nums[i] == 0) --zerocount;
                 i += 1;
             }
             ans = max (ans,j-i+1);
-            j += 1;
+            ++j;
         }
         return ans;
     }
