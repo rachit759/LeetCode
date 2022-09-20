@@ -8,9 +8,9 @@ public:
     }
     
     int pick(int target) {
-        vector<int> v = mp[target];
-        int index = rand()%v.size();
-        return v[index];
+        //vector<int> v = mp[target];
+        int index = rand()%mp[target].size();
+        return mp[target][index];
     }
 };
 
