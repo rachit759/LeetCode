@@ -32,10 +32,7 @@ public:
     int trap(vector<int>& height) {
         
         int n = height.size();        
-        int left = 0;
-        int right = n-1;
-        int leftmax = 0;
-        int rightmax = 0;     // order of n solution using two pointer approach 
+        int left = 0, right = n-1, leftmax = 0, rightmax = 0;   // order of n solution using two pointer approach 
                               // and calculating leftmax and rightmax 
         int water = 0;
         while(left < right) {
