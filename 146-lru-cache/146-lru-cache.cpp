@@ -12,13 +12,10 @@ public:
             val = _val;
         }
     };
-    
     unordered_map<int, node*> m;
     int cap;
-    
     node* head = new node(-1,-1);
     node* tail = new node(-1,-1);
-    
     
     LRUCache(int capacity) {
         cap = capacity;
@@ -49,7 +46,7 @@ public:
         {
             node* resnode = m[key];
             int ans = resnode->val;
-             m.erase(key);
+            m.erase(key);
             delnode(resnode);
             addnode(resnode);
             m[key] = head->next; 
