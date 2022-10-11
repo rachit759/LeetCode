@@ -25,7 +25,7 @@ class Solution
             else
             {
                 studentcount++;
-                 if(studentcount>M or a[i]>mid )
+                 if(studentcount>M)
               return false;
             
                 pages = a[i];
