@@ -15,7 +15,6 @@ public:
             prod = 1;
             for(int i = vec[0]; i <= vec[1]; i++) {
                 prod = (prod * v[i]) % m;
-                prod %= m;
             }
             ans.push_back(prod);
         }
