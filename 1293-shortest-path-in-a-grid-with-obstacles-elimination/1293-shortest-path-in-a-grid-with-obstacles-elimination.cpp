@@ -9,7 +9,7 @@ public:
         
         
         int m(size(grid)), n(size(grid[0]));
-        vector<vector<int>> vis(m, vector<int>(n,-1));
+        vector<vector<int>> vis(m, vector<int>(n,-1));   // using visited array at a particular cell we will store the number of obstacles that we can still remove after walking through that cell
         
         queue<array<int,4>> q;
         int dir[] = {-1,0,1,0,-1};
