@@ -14,8 +14,8 @@
 # order by 1 Desc limit 1 offset 1
 
 select IFNULL(
-    
+    null,
     (select distinct Salary from Employee 
-     order by Salary desc limit 1 offset 1), null
+     order by Salary desc limit 1 offset 1)
  )
 as SecondHighestSalary
