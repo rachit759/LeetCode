@@ -19,7 +19,7 @@ public:
     }
     
     long dfs(TreeNode* root) {
-        if(!root) return 0;
+        if(!root) return 0LL;
         // long left = dfs(root->left);
         // long right = dfs(root->right);
         long subtree = dfs(root->left) + dfs(root->right) + root->val;
