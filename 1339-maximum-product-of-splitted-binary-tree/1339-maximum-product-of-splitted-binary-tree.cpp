@@ -20,9 +20,9 @@ public:
     
     long dfs(TreeNode* root) {
         if(!root) return 0;
-        long left = dfs(root->left);
-        long right = dfs(root->right);
-        long subtree = left + right + root->val;
+        // long left = dfs(root->left);
+        // long right = dfs(root->right);
+        long subtree = dfs(root->left) + dfs(root->right) + root->val;
         ans = max(ans, (total-subtree) * subtree);
         return subtree;
     }
