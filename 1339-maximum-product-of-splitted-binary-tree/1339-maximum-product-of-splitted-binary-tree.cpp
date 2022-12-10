@@ -11,9 +11,9 @@
  */
 class Solution {
 public:
-    long total = 0, ans = 0;
+    long total, ans = 0;
     int maxProduct(TreeNode* root) {
-        sum(root);
+        total = dfs(root);
         dfs(root);
         return (int)(ans % 1000000007);
     }
@@ -27,11 +27,11 @@ public:
         return subtree;
     }
     
-    void sum(TreeNode* root) {
-        if(!root) return;
-        sum(root->left);
-        total += root->val;
-        sum(root->right);
-    }
+    // void sum(TreeNode* root) {
+    //     if(!root) return;
+    //     sum(root->left);
+    //     total += root->val;
+    //     sum(root->right);
+    // }
     
 };
