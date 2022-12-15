@@ -11,7 +11,8 @@ public:
     
     int longestCommonSubsequence(string text1, string text2) {
         vector<vector<int>> dp(1000, vector<int>(1000,-1));
-        return lcs(0,0,text1,text2,dp);
+        lcs(0,0,text1,text2,dp);
+        return dp[0][0];
     }
 };
 
